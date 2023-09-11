@@ -1,0 +1,27 @@
+--DDL
+ CREATE DATABASE Exercicio_Pessoas
+
+ USE Exercicio_Pessoas
+
+ -- CRIAR TABELAS 
+
+ CREATE TABLE Pessoa
+ (
+	IdPessoa INT PRIMARY KEY IDENTITY,
+	Nome VARCHAR(50) NOT NULL,
+	CNH VARCHAR (11) NOT NULL
+ )
+
+ CREATE TABLE Email
+ (
+	IdEmail INT PRIMARY KEY IDENTITY,
+	IdPEssoa INT FOREIGN KEY REFERENCES Pessoa (IdPessoa),
+	Email VARCHAR (50) NOT NULL
+ )
+
+ CREATE TABLE Telefone
+ (
+	IdEmail INT PRIMARY KEY IDENTITY,
+	IdPEssoa INT FOREIGN KEY REFERENCES Pessoa (IdPessoa),
+	Telefone VARCHAR (20) NOT NULL
+ )
